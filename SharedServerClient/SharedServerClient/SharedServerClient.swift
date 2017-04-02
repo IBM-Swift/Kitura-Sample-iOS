@@ -8,10 +8,10 @@
 
 import Foundation
 import Kitura
-import KituraHelloWorld
+import KituraSampleRouter
 
 public struct RouterCreator {
     public static func create() -> Router {
-        return KituraHelloWorld.RouterCreator.create()
+        return KituraSampleRouter.RouterCreator.create()
     }
 }
