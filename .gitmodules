@@ -1,10 +1,9 @@
-[submodule "ServerSide"]
-	path = ServerSide
-	url = https://github.com/IBM-Swift/kitura-helloworld.git
-	branch = two_modules
 [submodule "ClientSide"]
 	path = ClientSide
 	url = git@github.com:IBM-Swift/Kitura-Mobile-Server.git
 [submodule "Builder"]
 	path = Builder
 	url = git@github.com:rodedz/Kitura-Builder-iOS.git
+[submodule "ServerSide"]
+	path = ServerSide
+	url = git@github.com:rodedz/Kitura-Sample.git
