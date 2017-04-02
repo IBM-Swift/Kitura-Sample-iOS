@@ -1,12 +1,12 @@
 ![Kitura Builder for iOS](https://raw.githubusercontent.com/IBM-Swift/Kitura-Builder-iOS/master/Documentation/KituraIOS.jpg)
 
-# Kitura/iOS Hello World
+# Kitura/iOS Sample
 
 ![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
 ![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
 &nbsp;[![Slack Status](http://swift-at-ibm-slack.mybluemix.net/badge.svg)](http://swift-at-ibm-slack.mybluemix.net/)
 
-Simple Hello World Kitura Application (Server Side) embedded in an iOS app (Client Side).
+Simple Kitura Sample Application (Server Side) embedded in an iOS app (Client Side).
 The app demonstrates starting and stopping Kitura server, and presents Kitura log on the screen.
 
 # Prerequisites
@@ -35,8 +35,8 @@ See https://developer.ibm.com/swift/2017/03/13/kitura-ios/
 xcode-select --install
 sudo gem install xcodeproj
 
-git clone https://github.com/IBM-Swift/Kitura-HelloWorld-iOS.git
-cd Kitura-HelloWorld-iOS
+git clone https://github.com/IBM-Swift/Kitura-Sample-iOS.git
+cd Kitura-Sample-iOS
 make Builder/Makefile
 
 curl -O https://curl.haxx.se/download/curl-7.43.0.tar.bz2
