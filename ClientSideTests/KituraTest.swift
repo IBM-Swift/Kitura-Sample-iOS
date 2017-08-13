@@ -108,7 +108,7 @@ class KituraTest: XCTestCase {
             allHeaders["Content-Type"] = "text/plain"
         }
         let options: [ClientRequest.Options] =
-            [.method(method), .hostname("localhost"), .port(8090), .path(path), .headers(allHeaders)]
+            [.method(method), .hostname("localhost"), .port(8080), .path(path), .headers(allHeaders)]
         let req = HTTP.request(options) { response in
             guard let response = response else {
                 XCTFail("response object is nil")
