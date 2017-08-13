@@ -44,29 +44,6 @@ class KituraTest: XCTestCase {
     override func tearDown() {
     }
 
-    /*
-    func performServerTest(asyncTasks: @escaping (XCTestExpectation) -> Void...) {
-        let router = RouterCreator.create()
-        Kitura.addHTTPServer(onPort: 8090, with: router)
-        Kitura.start()
-
-        let requestQueue = DispatchQueue(label: "Request queue")
-
-        for (index, asyncTask) in asyncTasks.enumerated() {
-            let expectation = self.expectation(index)
-            requestQueue.async() {
-                asyncTask(expectation)
-            }
-        }
-
-        waitExpectation(timeout: 10) { error in
-            // blocks test until request completes
-            Kitura.stop()
-            XCTAssertNil(error)
-        }
-    }
-     */
-
     func performServerTest(asyncTasks: @escaping (XCTestExpectation) -> Void...) {
         guard let viewController = viewController else {
             XCTFail("view controller should not be nil")
