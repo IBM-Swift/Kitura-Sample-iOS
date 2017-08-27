@@ -1,4 +1,4 @@
-![Kitura Builder for iOS](https://raw.githubusercontent.com/IBM-Swift/Kitura-Builder-iOS/master/Documentation/KituraIOS.jpg)
+![Kitura/iOS](https://raw.githubusercontent.com/IBM-Swift/Kitura-HelloWorld-iOS/master/Documentation/KituraIOS.jpg)
 
 # Kitura/iOS Sample
 
