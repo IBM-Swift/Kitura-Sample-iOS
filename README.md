@@ -30,7 +30,7 @@ See https://developer.ibm.com/swift/2017/03/13/kitura-ios/
 # Quick Instructions
 (macOS Sierra 10.12.3 and Xcode 8.2.1)
 
-1. Setup (Run in terminal)
+1. Setup (run in a terminal)
 ```
 xcode-select --install
 sudo gem install xcodeproj
@@ -42,9 +42,17 @@ make Builder/Makefile
 curl -O https://curl.haxx.se/download/curl-7.43.0.tar.bz2
 bzip2 -d curl-7.43.0.tar.bz2; tar xopf curl-7.43.0.tar; rm -r curl-7.43.0.tar
 bash ./Builder/Scripts/buildCurlStaticLibrary.sh curl-7.43.0
-
-make
 ```
+For 64Bit (example, iPhone 5s or newer, iPad Air or newer, iPad Mini 2 or newer, iPad Pro or newer)
+```
+make openXcode
+```
+
+For 32Bit (example, iPhone 5, 5c, iPad 4)
+```
+make openXcode32
+```
+
 2. Open `EndToEnd.xcworkspace`
 3. Change scheme to "ClientSide"
 4. Load on iPhone or iPhone simulator
