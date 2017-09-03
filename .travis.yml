@@ -27,7 +27,7 @@ matrix:
       sudo: required
 
 script:
-  - ./build.sh
+  - ./.ci_build.sh
 
 git:
   submodules: false
