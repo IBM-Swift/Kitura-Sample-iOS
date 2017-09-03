@@ -20,5 +20,10 @@ Builder/Makefile:
 	git submodule init
 	git submodule update --remote --merge
 
-test: Builder/Makefile prepareXcode
-	xcodebuild test -workspace EndToEnd.xcworkspace -scheme ClientSide -destination 'platform=iOS Simulator,OS=10.3.1,name=iPhone 7'
+ClientSideTests/KituraSampleTests.swift:
+	-cp ServerSide/Tests/KituraSampleRouterTests/KituraSampleTests.swift ClientSideTests
+
+test: Builder/Makefile ServerSide/Package.swift ClientSideTests/KituraSampleTests.swift prepareXcode
+	xcodebuild test -workspace EndToEnd.xcworkspace -scheme ClientSide \
+		-destination 'platform=iOS Simulator,OS=10.3.1,name=iPhone 7'
+	rm -rf ClientSideTests/KituraSampleTests.swift
