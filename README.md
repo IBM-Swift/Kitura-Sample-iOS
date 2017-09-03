@@ -1,7 +1,7 @@
 ![Kitura Builder for iOS](https://raw.githubusercontent.com/IBM-Swift/Kitura-Builder-iOS/master/Documentation/KituraIOS.jpg)
 
 # Kitura/iOS Sample
-[![Build Status - Master](https://travis-ci.org/IBM-Swift/Kitura-Sample-iOS.svg?branch=master)](https://travis-ci.org/IBM-Swift/Kitura-Sample-iOS)
+[![Build Status](https://travis-ci.org/IBM-Swift/Kitura-Sample-iOS.svg?branch=master)](https://travis-ci.org/IBM-Swift/Kitura-Sample-iOS)
 ![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
 ![iOS](https://img.shields.io/badge/os-iOS-red.svg?style=flat)
 ![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
