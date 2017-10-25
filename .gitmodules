@@ -6,4 +6,4 @@
 	url = https://github.com/IBM-Swift/Kitura-Mobile-Server.git
 [submodule "ServerSide"]
 	path = ServerSide
-	url = https://github.com/IBM-Swift/Kitura-Sample.git
+	url = git@github.com:vadimeisenbergibm/Kitura-Sample.git
