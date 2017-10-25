@@ -15,6 +15,20 @@
 export KITURA_IOS_BUILD_SCRIPTS_DIR=Builder/Scripts
 -include Builder/Makefile
 
+ifeq ($(SWIFT_SNAPSHOT), swift-3.1.1-RELEASE)
+DEPLOYMENT_OS=10.3
+SIMULATOR_OS=10.3.1
+DEVICE=iPhone 7
+else ifeq ($(SWIFT_SNAPSHOT), swift-4.0-RELEASE)
+DEPLOYMENT_OS=11.0
+SIMULATOR_OS=11.0
+DEVICE=iPhone 8
+else
+DEPLOYMENT_OS=11.0
+SIMULATOR_OS=11.0.1
+DEVICE=iPhone 8
+endif
+
 Builder/Makefile:
 	@echo --- Fetching submodules
 	git submodule init
@@ -24,6 +38,9 @@ ClientSideTests/KituraSampleTests.swift:
 	-cp ServerSide/Tests/KituraSampleRouterTests/KituraSampleTests.swift ClientSideTests
 
 test: Builder/Makefile ServerSide/Package.swift ClientSideTests/KituraSampleTests.swift prepareXcode
+	echo SWIFT_SNAPSHOT=${SWIFT_SNAPSHOT}
+	ruby Builder/Scripts/set_deployment_version.rb ClientSide/ClientSide.xcodeproj ${DEPLOYMENT_OS}
+	ruby Builder/Scripts/set_deployment_version.rb SharedServerClient/SharedServerClient.xcodeproj ${DEPLOYMENT_OS}
 	xcodebuild test -workspace EndToEnd.xcworkspace -scheme ClientSide \
-		-destination 'platform=iOS Simulator,OS=10.3.1,name=iPhone 7'
+                -destination 'platform=iOS Simulator,OS=${SIMULATOR_OS},name=${DEVICE}'
 	rm -rf ClientSideTests/KituraSampleTests.swift
