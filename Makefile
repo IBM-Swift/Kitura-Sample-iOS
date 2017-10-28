@@ -15,11 +15,7 @@
 export KITURA_IOS_BUILD_SCRIPTS_DIR=Builder/Scripts
 -include Builder/Makefile
 
-ifeq ($(SWIFT_SNAPSHOT), swift-3.1.1-RELEASE)
-DEPLOYMENT_OS=10.3
-SIMULATOR_OS=10.3.1
-DEVICE=iPhone 7
-else ifeq ($(SWIFT_SNAPSHOT), swift-4.0-RELEASE)
+ifeq ($(SWIFT_SNAPSHOT), swift-4.0-RELEASE)
 DEPLOYMENT_OS=11.0
 SIMULATOR_OS=11.0
 DEVICE=iPhone 8
