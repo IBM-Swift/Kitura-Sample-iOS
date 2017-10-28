@@ -44,7 +44,7 @@ class KituraTest: XCTestCase {
     override func tearDown() {
     }
 
-    func performServerTest(asyncTasks: @escaping (XCTestExpectation) -> Void...) {
+    func performServerTest(asyncTasks: (XCTestExpectation) -> Void...) {
         guard let viewController = viewController else {
             XCTFail("view controller should not be nil")
             return
