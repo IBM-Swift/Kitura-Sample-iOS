@@ -13,6 +13,7 @@
 # limitations under the License.
 
 export KITURA_IOS_BUILD_SCRIPTS_DIR=Builder/Scripts
+# initial "-" prevents initial error message, when Builder submodule is not yet fetched
 -include Builder/Makefile
 
 ifeq ($(SWIFT_SNAPSHOT), swift-4.0-RELEASE)
@@ -20,8 +21,8 @@ DEPLOYMENT_OS=11.0
 SIMULATOR_OS=11.0
 DEVICE=iPhone 8
 else
-DEPLOYMENT_OS=11.0
-SIMULATOR_OS=11.0.1
+DEPLOYMENT_OS=11.1
+SIMULATOR_OS=11.1
 DEVICE=iPhone 8
 endif
 
