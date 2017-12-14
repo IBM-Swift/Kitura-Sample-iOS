@@ -26,11 +26,11 @@ SIMULATOR_OS=11.2
 DEVICE=iPhone 8
 endif
 
-Builder/Makefile: setDeploymentVersionOfSharedServerClient
+Builder/Makefile:
 	@echo --- Fetching submodules
 	git submodule init
 	git submodule update --remote --merge
-
+	make setDeploymentVersionOfSharedServerClient
 
 setDeploymentVersionOfSharedServerClient:
 	ruby Builder/Scripts/set_deployment_version.rb SharedServerClient/SharedServerClient.xcodeproj ${DEPLOYMENT_OS}
