@@ -38,7 +38,8 @@ setDeploymentVersionOfSharedServerClient:
 ClientSideTests/KituraSampleTests.swift:
 	-cp ServerSide/Tests/KituraSampleRouterTests/KituraSampleTests.swift ClientSideTests
 
-test: Builder/Makefile ServerSide/Package.swift ClientSideTests/KituraSampleTests.swift prepareXcode setDeploymentVersionOfSharedServerClient
+test: Builder/Makefile ServerSide/Package.swift ClientSideTests/KituraSampleTests.swift prepareXcode \
+ setDeploymentVersionOfSharedServerClient
 	echo SWIFT_SNAPSHOT=${SWIFT_SNAPSHOT}
 	xcodebuild test -workspace EndToEnd.xcworkspace -scheme ClientSide \
                 -destination 'platform=iOS Simulator,OS=${SIMULATOR_OS},name=${DEVICE}'
