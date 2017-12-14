@@ -26,16 +26,19 @@ SIMULATOR_OS=11.1
 DEVICE=iPhone 8
 endif
 
-Builder/Makefile:
+Builder/Makefile: setDeploymentVersionOfSharedServerClient
 	@echo --- Fetching submodules
 	git submodule init
 	git submodule update --remote --merge
+
+
+setDeploymentVersionOfSharedServerClient:
 	ruby Builder/Scripts/set_deployment_version.rb SharedServerClient/SharedServerClient.xcodeproj ${DEPLOYMENT_OS}
 
 ClientSideTests/KituraSampleTests.swift:
 	-cp ServerSide/Tests/KituraSampleRouterTests/KituraSampleTests.swift ClientSideTests
 
-test: Builder/Makefile ServerSide/Package.swift ClientSideTests/KituraSampleTests.swift prepareXcode
+test: Builder/Makefile ServerSide/Package.swift ClientSideTests/KituraSampleTests.swift prepareXcode setDeploymentVersionOfSharedServerClient
 	echo SWIFT_SNAPSHOT=${SWIFT_SNAPSHOT}
 	xcodebuild test -workspace EndToEnd.xcworkspace -scheme ClientSide \
                 -destination 'platform=iOS Simulator,OS=${SIMULATOR_OS},name=${DEVICE}'
