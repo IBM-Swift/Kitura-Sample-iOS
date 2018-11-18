@@ -7,3 +7,4 @@
 [submodule "ServerSide"]
 	path = ServerSide
 	url = https://github.com/vadimeisenbergibm/Kitura-Sample.git
+        branch = iOS
